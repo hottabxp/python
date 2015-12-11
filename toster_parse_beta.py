@@ -1,5 +1,5 @@
 #/usr/bin/env python3
-file = open('274164', 'r')
+file = open('5', 'r')
 text = file.read()
 
 #filew = open('1.html','w')
@@ -28,19 +28,27 @@ question = text[text.find('<meta property="og:title" content="')+35:text.find('<
 viewers = text[text.find('<span class="question__views-count question__views-count_full">')+142:text.find('<div class="question__comments-link">')-91]
 answers = text[text.find('<div class="section section_answers " id="answers" role="answers_section ">')+120:text.find('<ul class="content-list content-list_answers" id="answers_list">')-230]
 
-#resolved = text[text.find('<span class="btn__counter" role="subscribers_count">'):text.find('<button class="btn btn_more" data-toggle="dropdown" role="dropdown_trigger" type="button" title="Управление вопросом">')]
-#subscribers = text[text.find(''):text.find('')]
+#resolved = text[text.find(''):text.find('')]
 
+#subscribers = text[text.find('subscribers_count'):text.find('</span',[text.find('subscribers_count')])]
+
+i = text.find('subscribers_count')
+i2 = text.find('</span>',i)
+subscribers = text[i+101:i2-6]
+
+i = text.find('Решения вопроса          <span class="section-header__counter" role="answers_counter">')
+i2 = text.find('</span>',i)
+resolved = text[i+86:i2]
 
 date = text[text.find('time pubdate="" itemprop="dateCreated" datetime="')+49:text.find('time pubdate="" itemprop="dateCreated" datetime="')+68]
 
 
-print("ID вопроса: 	"+id)
-print("Вопрос: 		"+question)
+print("ID вопроса: 	["+id+"]")
+print("Вопрос: 		["+question+"]")
 print("Просмотры: 	["+viewers+"]")
 print("Ответы: 		["+answers+"]")
-#print("Решения:		["+resolved+"]")
-#print("Подписчики: 	["+subscribers+"]")
+print("Решения:		["+resolved+"]")
+print("Подписчики: 	["+subscribers+"]")
 print("Дата: 		["+date+"]")
 
 
