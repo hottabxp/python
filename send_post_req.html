@@ -1,0 +1,20 @@
+<html>
+<head>
+<script language='javascript'>
+function Go(following_id) {
+   var obj=document.myfrm
+   obj.following_id.value=following_id
+   obj.submit()
+}
+</script>
+</head>
+<body>
+<form name='myfrm' method='POST' action='https://startpeeps.com/request.php?t=follow&a=follow'>
+<!--Вот скрытые переменные-->
+<input type='hidden' name='following_id' value='9856'>
+
+...
+<input type='button' value='Go' onclick='Go(1,2)'>
+</form>
+</body>
+</html>
