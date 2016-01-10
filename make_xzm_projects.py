@@ -1,4 +1,3 @@
-import sys
 import os
 
 
@@ -11,10 +10,10 @@ def make_projects(name, path, icon, cat):
     file.writelines('[Desktop Entry]\n'
                     'Encoding=UTF-8\n'
                     'Type=Application\n'
-                    'Exec="' + path + '"\n'
-                    'Icon="' + icon + '"\n'
+                    'Exec=' + path + '\n'
+                    'Icon=' + icon + '\n'
                     'Terminal=false\n'
-                    'Name="' + name + '"\n'
+                    'Name=' + name + '\n'
                     'Categories='+ cat)
 
 
